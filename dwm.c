@@ -190,8 +190,8 @@ static void drawbar(Monitor *m);
 static void drawbars(void);
 static void enqueue(Client *c);
 static void enqueuestack(Client *c);
-static void enternotify(XEvent *e);
-static void expose(XEvent *e);
+//static void enternotify(XEvent *e); \* Commented out for now to prevent focus from following mouse */
+static void expose(XEvent *e); 
 static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
@@ -294,7 +294,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
 	[ConfigureRequest] = configurerequest,
 	[ConfigureNotify] = configurenotify,
 	[DestroyNotify] = destroynotify,
-	[EnterNotify] = enternotify,
+//	[EnterNotify] = enternotify,    /* disabled to prevent focus from following mouse pointer */ 
 	[Expose] = expose,
 	[FocusIn] = focusin,
 	[KeyPress] = keypress,
@@ -880,7 +880,10 @@ enqueuestack(Client *c)
 		c->snext = NULL;
 	}
 }
-
+ 
+/*
+ * Commented out for now to prevent focus from following the mouse
+ *
 void
 enternotify(XEvent *e)
 {
@@ -899,7 +902,7 @@ enternotify(XEvent *e)
 		return;
 	focus(c);
 }
-
+*/
 void
 expose(XEvent *e)
 {
