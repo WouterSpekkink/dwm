@@ -77,7 +77,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_s,	   spawn, 	   {.v = tabsurfcmd } },
 	{ MODKEY|Mod1Mask, 		XK_f,	   spawn,          {.v = firefoxcmd } },	
-	{ MODKEY|Mod1Mask,		XK_e, 	   spawn,	   {.v = emacscmd } },
+	{ MODKEY,			XK_e, 	   spawn,	   {.v = emacscmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
