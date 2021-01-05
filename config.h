@@ -70,14 +70,16 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *tabsurfcmd[] = { "tabbed", "-r 2", "surf", "-e"};
 static const char *firefoxcmd[] = { "firefox" };
 static const char *emacscmd[] = { "emacs", NULL };
+static const char *zoterocmd[] = { "zotero"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			XK_s,	   spawn, 	   {.v = tabsurfcmd } },
-	{ MODKEY|Mod1Mask, 		XK_f,	   spawn,          {.v = firefoxcmd } },	
-	{ MODKEY,			XK_e, 	   spawn,	   {.v = emacscmd } },
+	{ MODKEY,			            XK_s,	   spawn, 	       {.v = tabsurfcmd } },
+	{ MODKEY|Mod1Mask,	            XK_f,	   spawn,          {.v = firefoxcmd } },
+	{ MODKEY,			            XK_e, 	   spawn,	       {.v = emacscmd } },
+	{ MODKEY,                       XK_z,       spawn,          {.v = zoterocmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -93,10 +95,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY, 			XK_g,	   setlayout,	   {.v = &layouts[3]} },
+	{ MODKEY, 			            XK_g,	   setlayout,	   {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,		XK_f,	   togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,		        XK_f,	   togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
