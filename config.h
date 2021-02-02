@@ -20,10 +20,11 @@ static const char col_cyan[]        = "#005577";
 static const char col_purple[]      = "#85678f";
 static const char col_dracpurple[]  = "#bd93f9";
 static const char col_dracpink[]    = "#ff79c6";
+static const char col_darkpurple[]  = "#563C5C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_dracpurple,  col_dracpurple  },
+	[SchemeSel]  = { col_gray4, col_darkpurple,  col_darkpurple  },
 };
 
 /* tagging */
@@ -65,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_dracpurple, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_darkpurple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *tabsurfcmd[] = { "tabbed", "-r 2", "surf", "-e"};
 static const char *firefoxcmd[] = { "firefox" };
