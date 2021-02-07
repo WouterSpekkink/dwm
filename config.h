@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_darkpurple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *tabsurfcmd[] = { "tabbed", "-r 2", "surf", "-e"};
+static const char *qtbrwsrcmd[] = { "qutebrowser" };
 static const char *firefoxcmd[] = { "firefox" };
 static const char *emacscmd[] = { "emacs", NULL };
 static const char *zoterocmd[] = { "zotero"};
@@ -77,7 +77,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			            XK_s,	   spawn, 	       {.v = tabsurfcmd } },
+	{ MODKEY,			            XK_s,	   spawn, 	       {.v = qtbrwsrcmd } },
 	{ MODKEY|Mod1Mask,	            XK_f,	   spawn,          {.v = firefoxcmd } },
 	{ MODKEY,			            XK_e, 	   spawn,	       {.v = emacscmd } },
 	{ MODKEY,                       XK_z,       spawn,          {.v = zoterocmd } },
