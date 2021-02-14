@@ -70,7 +70,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *qtbrwsrcmd[] = { "qutebrowser", NULL };
 static const char *firefoxcmd[] = { "firefox", NULL };
-static const char *emacscmd[] = { "emacs", NULL };
+static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
 static const char *zoterocmd[] = { "zotero", NULL };
 
 static Key keys[] = {
