@@ -7,7 +7,7 @@ static const unsigned int gappx     = 5;        /* gap between windows */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
+static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
@@ -77,10 +77,10 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,			            XK_s,	   spawn, 	       {.v = qtbrwsrcmd } },
-	{ MODKEY|Mod1Mask,	            XK_f,	   spawn,          {.v = firefoxcmd } },
-	{ MODKEY,			            XK_e, 	   spawn,	       {.v = emacscmd } },
-	{ MODKEY,                       XK_z,       spawn,          {.v = zoterocmd } },
+	{ MODKEY,                       XK_s,	   spawn,          {.v = qtbrwsrcmd } },
+	{ MODKEY|Mod1Mask,              XK_f,	   spawn,          {.v = firefoxcmd } },
+	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -96,10 +96,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY, 			            XK_g,	   setlayout,	   {.v = &layouts[3]} },
+	{ MODKEY,                       XK_g,	   setlayout,	   {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,		        XK_f,	   togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_f,	   togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -115,7 +115,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          SHCMD("quitcmd") },
 };
 
 /* button definitions */
