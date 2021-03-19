@@ -11,7 +11,6 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -65,20 +64,19 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_darkpurple, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *qtbrwsrcmd[] = { "qutebrowser", NULL };
-static const char *firefoxcmd[] = { "firefox", NULL };
+static const char *bravecmd[] = { "brave", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
 static const char *zoterocmd[] = { "zotero", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
+    { MODKEY,                       XK_o,      spawn,          SHCMD("dmenuconfig") },
+ 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,	   spawn,          {.v = qtbrwsrcmd } },
-	{ MODKEY|Mod1Mask,              XK_f,	   spawn,          {.v = firefoxcmd } },
+	{ MODKEY|Mod1Mask,              XK_b,	   spawn,          {.v = bravecmd } },
 	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
