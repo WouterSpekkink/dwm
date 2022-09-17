@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
-static const char *qtbrwsrcmd[] = { "qutebrowser", NULL };
+static const char *qtbrwsrcmd[] = { "nyxt", NULL };
 static const char *bravecmd[] = { "brave", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
 static const char *zoterocmd[] = { "zotero", NULL };
