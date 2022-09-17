@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
-static const char *qtbrwsrcmd[] = { "nyxt", NULL };
+static const char *nyxtcmd[] = { "nyxt", NULL };
 static const char *bravecmd[] = { "brave", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", "-a emacs", NULL };
 static const char *zoterocmd[] = { "zotero", NULL };
@@ -78,7 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,      spawn,          SHCMD("org-capture") },
     { MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("screenshot") },
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_s,	   spawn,          {.v = qtbrwsrcmd } },
+	{ MODKEY,                       XK_s,	   spawn,          {.v = nyxtcmd } },
 	{ MODKEY|Mod1Mask,              XK_b,	   spawn,          {.v = bravecmd } },
 	{ MODKEY,                       XK_e, 	   spawn,          {.v = emacscmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = zoterocmd } },
