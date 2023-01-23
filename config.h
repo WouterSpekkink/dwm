@@ -76,7 +76,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
     { MODKEY,                       XK_o,      spawn,          SHCMD("dmenuconfig") },
-	{ MODKEY,                       XK_c,      spawn,          SHCMD("org-capture") },
+	{ MODKEY,                       XK_c,      spawn,          SHCMD("chat-gpt") },
     { MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("screenshot") },
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,	   spawn,          {.v = nyxtcmd } },
