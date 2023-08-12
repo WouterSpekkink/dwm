@@ -18,12 +18,12 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_purple[]      = "#85678f";
-static const char col_dracpurple[]  = "#bd93f9"; static const char col_dracpink[]    = "#ff79c6";
-static const char col_darkpurple[]  = "#563C5C";
+static const char col_darkblue[]    = "#1d2570";
+static const char col_lightblue[]   = "#7991bd";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_darkpurple,  col_dracpink  },
+	[SchemeSel]  = { col_gray4, col_darkblue,  col_lightblue },
 };
 
 /* tagging */
@@ -92,7 +92,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,			XK_i,      spawn,	   SHCMD("xdotool type $(grep -v '^#' ~/.local/share/bookmarks | dmenu -l 50 | cut -d' ' -f1)") },
+	{ MODKEY,			XK_i,      spawn,	   SHCMD("insert-bookmark")},
         { MODKEY,                       XK_b,      spawn,          SHCMD("bookmark-this")},
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
